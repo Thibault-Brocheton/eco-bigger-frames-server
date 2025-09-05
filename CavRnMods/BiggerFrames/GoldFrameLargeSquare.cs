@@ -63,6 +63,17 @@ namespace Eco.Mods.TechTree
         public override LocString DisplayName => Localizer.DoStr("Gold Frame Large Square");
         public override TableTextureMode TableTexture => TableTextureMode.Metal;
 
+        static GoldFrameLargeSquareObject()
+        {
+            WorldObject.AddOccupancy<GoldFrameLargeSquareObject>(new List
+                <BlockOccupancy>(){
+                    new BlockOccupancy(new Vector3i( 0, 0, 0)),
+                    new BlockOccupancy(new Vector3i( 0, 1, 0)),
+                    new BlockOccupancy(new Vector3i( 1, 0, 0)),
+                    new BlockOccupancy(new Vector3i( 1, 1, 0)),
+                });
+        }
+
         protected override void Initialize()
         {
             this.ModsPreInitialize();

@@ -63,6 +63,19 @@ namespace Eco.Mods.TechTree
         public override LocString DisplayName => Localizer.DoStr("Iron Frame Large Tall");
         public override TableTextureMode TableTexture => TableTextureMode.Metal;
 
+        static IronFrameLargeTallObject()
+        {
+            WorldObject.AddOccupancy<IronFrameLargeTallObject>(new List
+                <BlockOccupancy>(){
+                    new BlockOccupancy(new Vector3i( 0, 0, 0)),
+                    new BlockOccupancy(new Vector3i( 0, 1, 0)),
+                    new BlockOccupancy(new Vector3i( 0, 2, 0)),
+                    new BlockOccupancy(new Vector3i( 1, 0, 0)),
+                    new BlockOccupancy(new Vector3i( 1, 1, 0)),
+                    new BlockOccupancy(new Vector3i( 1, 2, 0)),
+                });
+        }
+
         protected override void Initialize()
         {
             this.ModsPreInitialize();

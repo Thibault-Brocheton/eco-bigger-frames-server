@@ -63,6 +63,15 @@ namespace Eco.Mods.TechTree
         public override LocString DisplayName => Localizer.DoStr("Borderless Frame Wide");
         public override TableTextureMode TableTexture => TableTextureMode.Wood;
 
+        static BorderlessFrameWideObject()
+        {
+            WorldObject.AddOccupancy<BorderlessFrameWideObject>(new List
+                <BlockOccupancy>(){
+                    new BlockOccupancy(new Vector3i( 0, 0, 0)),
+                    new BlockOccupancy(new Vector3i( 1, 0, 0)),
+                });
+        }
+
         protected override void Initialize()
         {
             this.ModsPreInitialize();
@@ -124,7 +133,7 @@ namespace Eco.Mods.TechTree
                 // type of the item, the amount of the item, the skill required, and the talent used.
                 ingredients: new List<IngredientElement>
                 {
-                    new IngredientElement("MortaredStone", 2, typeof(MasonrySkill), typeof(CarpentryLavishResourcesTalent)), //noloc
+                    new IngredientElement("MortaredStone", 2, typeof(MasonrySkill), typeof(MasonryLavishResourcesTalent)), //noloc
                 },
 
                 // Define our recipe output items.
@@ -141,7 +150,7 @@ namespace Eco.Mods.TechTree
             this.LaborInCalories = CreateLaborInCaloriesValue(160, typeof(MasonrySkill));
 
             // Defines our crafting time for the recipe
-            this.CraftMinutes = CreateCraftTimeValue(beneficiary: typeof(BorderlessFrameWideRecipe), start: 1, skillType: typeof(MasonrySkill), typeof(CarpentryFocusedSpeedTalent), typeof(CarpentryParallelSpeedTalent));
+            this.CraftMinutes = CreateCraftTimeValue(beneficiary: typeof(BorderlessFrameWideRecipe), start: 1, skillType: typeof(MasonrySkill), typeof(MasonryFocusedSpeedTalent), typeof(MasonryParallelSpeedTalent));
 
             // Perform pre/post initialization for user mods and initialize our recipe instance with the display name "Borderless Frame Wide"
             this.ModsPreInitialize();
@@ -149,7 +158,7 @@ namespace Eco.Mods.TechTree
             this.ModsPostInitialize();
 
             // Register our RecipeFamily instance with the crafting system so it can be crafted.
-            CraftingComponent.AddRecipe(tableType: typeof(CarpentryTableObject), recipeFamily: this);
+            CraftingComponent.AddRecipe(tableType: typeof(MasonryTableObject), recipeFamily: this);
         }
 
         /// <summary>Hook for mods to customize RecipeFamily before initialization. You can change recipes, xp, labor, time here.</summary>

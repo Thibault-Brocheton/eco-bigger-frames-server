@@ -63,6 +63,15 @@ namespace Eco.Mods.TechTree
         public override LocString DisplayName => Localizer.DoStr("Borderless Frame Tall");
         public override TableTextureMode TableTexture => TableTextureMode.Wood;
 
+        static BorderlessFrameTallObject()
+        {
+            WorldObject.AddOccupancy<BorderlessFrameTallObject>(new List
+                <BlockOccupancy>(){
+                    new BlockOccupancy(new Vector3i( 0, 0, 0)),
+                    new BlockOccupancy(new Vector3i( 0, 1, 0)),
+                });
+        }
+
         protected override void Initialize()
         {
             this.ModsPreInitialize();
@@ -111,12 +120,11 @@ namespace Eco.Mods.TechTree
     /// </remarks>
     [RequiresSkill(typeof(MasonrySkill), 4)]
     [Ecopedia("Housing Objects", "Cultural", subPageName: "Borderless Frame Tall Item")]
-    public partial class BorderlessFrameTallRecipe : RecipeFamily
+    public partial class BorderlessFrameTallRecipe : Recipe
     {
         public BorderlessFrameTallRecipe()
         {
-            var recipe = new Recipe();
-            recipe.Init(
+            this.Init(
                 name: "BorderlessFrameTall",  //noloc
                 displayName: Localizer.DoStr("Borderless Frame Tall"),
 
@@ -124,7 +132,7 @@ namespace Eco.Mods.TechTree
                 // type of the item, the amount of the item, the skill required, and the talent used.
                 ingredients: new List<IngredientElement>
                 {
-                    new IngredientElement("MortaredStone", 2, typeof(MasonrySkill), typeof(CarpentryLavishResourcesTalent)), //noloc
+                    new IngredientElement("MortaredStone", 2, typeof(MasonrySkill), typeof(MasonryLavishResourcesTalent)), //noloc
                 },
 
                 // Define our recipe output items.
@@ -134,26 +142,11 @@ namespace Eco.Mods.TechTree
                 {
                     new CraftingElement<BorderlessFrameTallItem>()
                 });
-            this.Recipes = new List<Recipe> { recipe };
-            this.ExperienceOnCraft = 1; // Defines how much experience is gained when crafted.
-
-            // Defines the amount of labor required and the required skill to add labor
-            this.LaborInCalories = CreateLaborInCaloriesValue(160, typeof(MasonrySkill));
-
-            // Defines our crafting time for the recipe
-            this.CraftMinutes = CreateCraftTimeValue(beneficiary: typeof(BorderlessFrameTallRecipe), start: 1, skillType: typeof(MasonrySkill), typeof(CarpentryFocusedSpeedTalent), typeof(CarpentryParallelSpeedTalent));
-
-            // Perform pre/post initialization for user mods and initialize our recipe instance with the display name "Borderless Frame Tall"
-            this.ModsPreInitialize();
-            this.Initialize(displayText: Localizer.DoStr("Borderless Frame Tall"), recipeType: typeof(BorderlessFrameTallRecipe));
+            // Perform post initialization steps for user mods and initialize our recipe instance as a tag product with the crafting system
             this.ModsPostInitialize();
-
-            // Register our RecipeFamily instance with the crafting system so it can be crafted.
-            CraftingComponent.AddRecipe(tableType: typeof(CarpentryTableObject), recipeFamily: this);
+            CraftingComponent.AddTagProduct(typeof(MasonryTableObject), typeof(BorderlessFrameTallRecipe), this);
         }
 
-        /// <summary>Hook for mods to customize RecipeFamily before initialization. You can change recipes, xp, labor, time here.</summary>
-        partial void ModsPreInitialize();
 
         /// <summary>Hook for mods to customize RecipeFamily after initialization, but before registration. You can change skill requirements here.</summary>
         partial void ModsPostInitialize();

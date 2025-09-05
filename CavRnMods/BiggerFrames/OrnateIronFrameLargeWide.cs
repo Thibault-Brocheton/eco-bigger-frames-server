@@ -63,6 +63,19 @@ namespace Eco.Mods.TechTree
         public override LocString DisplayName => Localizer.DoStr("Ornate Iron Frame Large Wide");
         public override TableTextureMode TableTexture => TableTextureMode.Metal;
 
+        static OrnateIronFrameLargeWideObject()
+        {
+            WorldObject.AddOccupancy<OrnateIronFrameLargeWideObject>(new List
+                <BlockOccupancy>(){
+                    new BlockOccupancy(new Vector3i( 0, 0, 0)),
+                    new BlockOccupancy(new Vector3i( 0, 1, 0)),
+                    new BlockOccupancy(new Vector3i( 1, 0, 0)),
+                    new BlockOccupancy(new Vector3i( 1, 1, 0)),
+                    new BlockOccupancy(new Vector3i( 2, 0, 0)),
+                    new BlockOccupancy(new Vector3i( 2, 1, 0)),
+                });
+        }
+
         protected override void Initialize()
         {
             this.ModsPreInitialize();
@@ -111,12 +124,11 @@ namespace Eco.Mods.TechTree
     [RequiresModule(typeof(BlacksmithTableObject))]
     [RequiresSkill(typeof(BlacksmithSkill), 6)]
     [Ecopedia("Housing Objects", "Cultural", subPageName: "Ornate Iron Frame Large Wide Item")]
-    public partial class OrnateIronFrameLargeWideRecipe : RecipeFamily
+    public partial class OrnateIronFrameLargeWideRecipe : Recipe
     {
         public OrnateIronFrameLargeWideRecipe()
         {
-            var recipe = new Recipe();
-            recipe.Init(
+            this.Init(
                 name: "OrnateIronFrameLargeWide",  //noloc
                 displayName: Localizer.DoStr("Ornate Iron Frame Large Wide"),
 
@@ -134,26 +146,11 @@ namespace Eco.Mods.TechTree
                 {
                     new CraftingElement<OrnateIronFrameLargeWideItem>()
                 });
-            this.Recipes = new List<Recipe> { recipe };
-            this.ExperienceOnCraft = 1; // Defines how much experience is gained when crafted.
-
-            // Defines the amount of labor required and the required skill to add labor
-            this.LaborInCalories = CreateLaborInCaloriesValue(160, typeof(BlacksmithSkill));
-
-            // Defines our crafting time for the recipe
-            this.CraftMinutes = CreateCraftTimeValue(beneficiary: typeof(OrnateIronFrameLargeWideRecipe), start: 1, skillType: typeof(BlacksmithSkill), typeof(BlacksmithFocusedSpeedTalent), typeof(BlacksmithParallelSpeedTalent));
-
-            // Perform pre/post initialization for user mods and initialize our recipe instance with the display name "Ornate Iron Frame Large Wide"
-            this.ModsPreInitialize();
-            this.Initialize(displayText: Localizer.DoStr("Ornate Iron Frame Large Wide"), recipeType: typeof(OrnateIronFrameLargeWideRecipe));
+            // Perform post initialization steps for user mods and initialize our recipe instance as a tag product with the crafting system
             this.ModsPostInitialize();
-
-            // Register our RecipeFamily instance with the crafting system so it can be crafted.
-            CraftingComponent.AddRecipe(tableType: typeof(AnvilObject), recipeFamily: this);
+            CraftingComponent.AddTagProduct(typeof(AnvilObject), typeof(OrnateIronFrameWideRecipe), this);
         }
 
-        /// <summary>Hook for mods to customize RecipeFamily before initialization. You can change recipes, xp, labor, time here.</summary>
-        partial void ModsPreInitialize();
 
         /// <summary>Hook for mods to customize RecipeFamily after initialization, but before registration. You can change skill requirements here.</summary>
         partial void ModsPostInitialize();
