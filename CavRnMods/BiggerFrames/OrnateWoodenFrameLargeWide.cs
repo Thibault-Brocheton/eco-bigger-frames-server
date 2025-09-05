@@ -56,11 +56,11 @@ namespace Eco.Mods.TechTree
     [RequireRoomContainment]
     [RequireRoomVolume(2)]
     [Tag("Usable")]
-    [Ecopedia("Housing Objects", "Cultural", subPageName: "Ornate Wooden Frame Wide Item")]
+    [Ecopedia("Housing Objects", "Cultural", subPageName: "Ornate Wooden Frame Large Wide Item")]
             public partial class OrnateWoodenFrameLargeWideObject : PictureFrameObject, IRepresentsItem
     {
         public virtual Type RepresentedItemType => typeof(OrnateWoodenFrameLargeWideItem);
-        public override LocString DisplayName => Localizer.DoStr("Ornate Wooden Frame Wide");
+        public override LocString DisplayName => Localizer.DoStr("Ornate Wooden Frame Large Wide");
         public override TableTextureMode TableTexture => TableTextureMode.Wood;
 
         protected override void Initialize()
@@ -79,7 +79,7 @@ namespace Eco.Mods.TechTree
     }
 
     [Serialized]
-    [LocDisplayName("Ornate Wooden Frame Wide")]
+    [LocDisplayName("Ornate Wooden Frame Large Wide")]
     [LocDescription("An ornate wooden frame useful for simple picture and art displays.")]
     [Ecopedia("Housing Objects", "Cultural", createAsSubPage: true)]
     [Tag("Housing")]
@@ -110,7 +110,7 @@ namespace Eco.Mods.TechTree
     /// If you wish to modify this class, please create a new partial class or follow the instructions in the "UserCode" folder to override the entire file.
     /// </remarks>
     [RequiresSkill(typeof(CarpentrySkill), 5)]
-    [Ecopedia("Housing Objects", "Cultural", subPageName: "Ornate Wooden Frame Wide Item")]
+    [Ecopedia("Housing Objects", "Cultural", subPageName: "Ornate Wooden Frame Large Wide Item")]
     public partial class OrnateWoodenFrameLargeWideRecipe : RecipeFamily
     {
         public OrnateWoodenFrameLargeWideRecipe()
@@ -118,7 +118,7 @@ namespace Eco.Mods.TechTree
             var recipe = new Recipe();
             recipe.Init(
                 name: "OrnateWoodenFrameLargeWide",  //noloc
-                displayName: Localizer.DoStr("Ornate Wooden Frame Wide"),
+                displayName: Localizer.DoStr("Ornate Wooden Frame Large Wide"),
 
                 // Defines the ingredients needed to craft this recipe. An ingredient items takes the following inputs
                 // type of the item, the amount of the item, the skill required, and the talent used.
@@ -143,9 +143,9 @@ namespace Eco.Mods.TechTree
             // Defines our crafting time for the recipe
             this.CraftMinutes = CreateCraftTimeValue(beneficiary: typeof(OrnateWoodenFrameLargeWideRecipe), start: 1, skillType: typeof(CarpentrySkill), typeof(CarpentryFocusedSpeedTalent), typeof(CarpentryParallelSpeedTalent));
 
-            // Perform pre/post initialization for user mods and initialize our recipe instance with the display name "Ornate Wooden Frame Wide"
+            // Perform pre/post initialization for user mods and initialize our recipe instance with the display name "Ornate Wooden Frame Large Wide"
             this.ModsPreInitialize();
-            this.Initialize(displayText: Localizer.DoStr("Ornate Wooden Frame Wide"), recipeType: typeof(OrnateWoodenFrameLargeWideRecipe));
+            this.Initialize(displayText: Localizer.DoStr("Ornate Wooden Frame Large Wide"), recipeType: typeof(OrnateWoodenFrameLargeWideRecipe));
             this.ModsPostInitialize();
 
             // Register our RecipeFamily instance with the crafting system so it can be crafted.

@@ -56,11 +56,11 @@ namespace Eco.Mods.TechTree
     [RequireRoomContainment]
     [RequireRoomVolume(2)]
     [Tag("Usable")]
-    [Ecopedia("Housing Objects", "Cultural", subPageName: "Gold Frame Square Item")]
+    [Ecopedia("Housing Objects", "Cultural", subPageName: "Gold Frame Large Square Item")]
             public partial class GoldFrameLargeSquareObject : PictureFrameObject, IRepresentsItem
     {
         public virtual Type RepresentedItemType => typeof(GoldFrameLargeSquareItem);
-        public override LocString DisplayName => Localizer.DoStr("Gold Frame Square");
+        public override LocString DisplayName => Localizer.DoStr("Gold Frame Large Square");
         public override TableTextureMode TableTexture => TableTextureMode.Metal;
 
         protected override void Initialize()
@@ -79,7 +79,7 @@ namespace Eco.Mods.TechTree
     }
 
     [Serialized]
-    [LocDisplayName("Gold Frame Square")]
+    [LocDisplayName("Gold Frame Large Square")]
     [LocDescription("A gold frame useful for simple picture and art displays.")]
     [Ecopedia("Housing Objects", "Cultural", createAsSubPage: true)]
     [Tag("Housing")]
@@ -112,14 +112,14 @@ namespace Eco.Mods.TechTree
     [RequiresModule(typeof(BlacksmithTableObject))]
     [RequiresSkill(typeof(BlacksmithSkill), 4)]
     [ForceCreateView]
-    [Ecopedia("Housing Objects", "Cultural", subPageName: "Gold Frame Square Item")]
+    [Ecopedia("Housing Objects", "Cultural", subPageName: "Gold Frame Large Square Item")]
     public partial class GoldFrameLargeSquareRecipe : Recipe
     {
         public GoldFrameLargeSquareRecipe()
         {
             this.Init(
                 name: "GoldFrameLargeSquare",  //noloc
-                displayName: Localizer.DoStr("Gold Frame Square"),
+                displayName: Localizer.DoStr("Gold Frame Large Square"),
 
                 // Defines the ingredients needed to craft this recipe. An ingredient items takes the following inputs
                 // type of the item, the amount of the item, the skill required, and the talent used.

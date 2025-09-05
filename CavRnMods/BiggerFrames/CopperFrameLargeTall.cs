@@ -56,11 +56,11 @@ namespace Eco.Mods.TechTree
     [RequireRoomContainment]
     [RequireRoomVolume(2)]
     [Tag("Usable")]
-    [Ecopedia("Housing Objects", "Cultural", subPageName: "Copper Frame Tall Item")]
+    [Ecopedia("Housing Objects", "Cultural", subPageName: "Copper Frame Large Tall Item")]
             public partial class CopperFrameLargeTallObject : PictureFrameObject, IRepresentsItem
     {
         public virtual Type RepresentedItemType => typeof(CopperFrameLargeTallItem);
-        public override LocString DisplayName => Localizer.DoStr("Copper Frame Tall");
+        public override LocString DisplayName => Localizer.DoStr("Copper Frame Large Tall");
         public override TableTextureMode TableTexture => TableTextureMode.Metal;
 
         protected override void Initialize()
@@ -79,7 +79,7 @@ namespace Eco.Mods.TechTree
     }
 
     [Serialized]
-    [LocDisplayName("Copper Frame Tall")]
+    [LocDisplayName("Copper Frame Large Tall")]
     [LocDescription("A copper frame useful for simple picture and art displays.")]
     [Ecopedia("Housing Objects", "Cultural", createAsSubPage: true)]
     [Tag("Housing")]
@@ -112,14 +112,14 @@ namespace Eco.Mods.TechTree
     [RequiresModule(typeof(BlacksmithTableObject))]
     [RequiresSkill(typeof(BlacksmithSkill), 4)]
     [ForceCreateView]
-    [Ecopedia("Housing Objects", "Cultural", subPageName: "Copper Frame Tall Item")]
+    [Ecopedia("Housing Objects", "Cultural", subPageName: "Copper Frame Large Tall Item")]
     public partial class CopperFrameLargeTallRecipe : Recipe
     {
         public CopperFrameLargeTallRecipe()
         {
             this.Init(
                 name: "CopperFrameLargeTall",  //noloc
-                displayName: Localizer.DoStr("Copper Frame Tall"),
+                displayName: Localizer.DoStr("Copper Frame Large Tall"),
 
                 // Defines the ingredients needed to craft this recipe. An ingredient items takes the following inputs
                 // type of the item, the amount of the item, the skill required, and the talent used.

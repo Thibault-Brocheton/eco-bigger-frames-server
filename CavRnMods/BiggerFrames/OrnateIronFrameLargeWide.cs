@@ -56,11 +56,11 @@ namespace Eco.Mods.TechTree
     [RequireRoomContainment]
     [RequireRoomVolume(2)]
     [Tag("Usable")]
-    [Ecopedia("Housing Objects", "Cultural", subPageName: "Ornate Iron Frame Wide Item")]
+    [Ecopedia("Housing Objects", "Cultural", subPageName: "Ornate Iron Frame Large Wide Item")]
             public partial class OrnateIronFrameLargeWideObject : PictureFrameObject, IRepresentsItem
     {
         public virtual Type RepresentedItemType => typeof(OrnateIronFrameLargeWideItem);
-        public override LocString DisplayName => Localizer.DoStr("Ornate Iron Frame Wide");
+        public override LocString DisplayName => Localizer.DoStr("Ornate Iron Frame Large Wide");
         public override TableTextureMode TableTexture => TableTextureMode.Metal;
 
         protected override void Initialize()
@@ -79,7 +79,7 @@ namespace Eco.Mods.TechTree
     }
 
     [Serialized]
-    [LocDisplayName("Ornate Iron Frame Wide")]
+    [LocDisplayName("Ornate Iron Frame Large Wide")]
     [LocDescription("An ornate iron frame useful for simple picture and art displays.")]
     [Ecopedia("Housing Objects", "Cultural", createAsSubPage: true)]
     [Tag("Housing")]
@@ -110,7 +110,7 @@ namespace Eco.Mods.TechTree
     /// </remarks>
     [RequiresModule(typeof(BlacksmithTableObject))]
     [RequiresSkill(typeof(BlacksmithSkill), 6)]
-    [Ecopedia("Housing Objects", "Cultural", subPageName: "Ornate Iron Frame Wide Item")]
+    [Ecopedia("Housing Objects", "Cultural", subPageName: "Ornate Iron Frame Large Wide Item")]
     public partial class OrnateIronFrameLargeWideRecipe : RecipeFamily
     {
         public OrnateIronFrameLargeWideRecipe()
@@ -118,7 +118,7 @@ namespace Eco.Mods.TechTree
             var recipe = new Recipe();
             recipe.Init(
                 name: "OrnateIronFrameLargeWide",  //noloc
-                displayName: Localizer.DoStr("Ornate Iron Frame Wide"),
+                displayName: Localizer.DoStr("Ornate Iron Frame Large Wide"),
 
                 // Defines the ingredients needed to craft this recipe. An ingredient items takes the following inputs
                 // type of the item, the amount of the item, the skill required, and the talent used.
@@ -143,9 +143,9 @@ namespace Eco.Mods.TechTree
             // Defines our crafting time for the recipe
             this.CraftMinutes = CreateCraftTimeValue(beneficiary: typeof(OrnateIronFrameLargeWideRecipe), start: 1, skillType: typeof(BlacksmithSkill), typeof(BlacksmithFocusedSpeedTalent), typeof(BlacksmithParallelSpeedTalent));
 
-            // Perform pre/post initialization for user mods and initialize our recipe instance with the display name "Ornate Iron Frame Wide"
+            // Perform pre/post initialization for user mods and initialize our recipe instance with the display name "Ornate Iron Frame Large Wide"
             this.ModsPreInitialize();
-            this.Initialize(displayText: Localizer.DoStr("Ornate Iron Frame Wide"), recipeType: typeof(OrnateIronFrameLargeWideRecipe));
+            this.Initialize(displayText: Localizer.DoStr("Ornate Iron Frame Large Wide"), recipeType: typeof(OrnateIronFrameLargeWideRecipe));
             this.ModsPostInitialize();
 
             // Register our RecipeFamily instance with the crafting system so it can be crafted.

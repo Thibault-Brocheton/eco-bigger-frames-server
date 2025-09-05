@@ -56,11 +56,11 @@ namespace Eco.Mods.TechTree
     [RequireRoomContainment]
     [RequireRoomVolume(2)]
     [Tag("Usable")]
-    [Ecopedia("Housing Objects", "Cultural", subPageName: "Wooden Frame Tall Item")]
+    [Ecopedia("Housing Objects", "Cultural", subPageName: "Wooden Frame Large Tall Item")]
             public partial class WoodenFrameLargeTallObject : PictureFrameObject, IRepresentsItem
     {
         public virtual Type RepresentedItemType => typeof(WoodenFrameLargeTallItem);
-        public override LocString DisplayName => Localizer.DoStr("Wooden Frame Tall");
+        public override LocString DisplayName => Localizer.DoStr("Wooden Frame Large Tall");
         public override TableTextureMode TableTexture => TableTextureMode.Wood;
 
         protected override void Initialize()
@@ -79,7 +79,7 @@ namespace Eco.Mods.TechTree
     }
 
     [Serialized]
-    [LocDisplayName("Wooden Frame Tall")]
+    [LocDisplayName("Wooden Frame Large Tall")]
     [LocDescription("A wooden frame useful for simple picture and art displays.")]
     [Ecopedia("Housing Objects", "Cultural", createAsSubPage: true)]
     [Tag("Housing")]
@@ -111,14 +111,14 @@ namespace Eco.Mods.TechTree
     /// </remarks>
     [RequiresSkill(typeof(CarpentrySkill), 4)]
     [ForceCreateView]
-    [Ecopedia("Housing Objects", "Cultural", subPageName: "Wooden Frame Tall Item")]
+    [Ecopedia("Housing Objects", "Cultural", subPageName: "Wooden Frame Large Tall Item")]
     public partial class WoodenFrameLargeTallRecipe : Recipe
     {
         public WoodenFrameLargeTallRecipe()
         {
             this.Init(
                 name: "WoodenFrameLargeTall",  //noloc
-                displayName: Localizer.DoStr("Wooden Frame Tall"),
+                displayName: Localizer.DoStr("Wooden Frame Large Tall"),
 
                 // Defines the ingredients needed to craft this recipe. An ingredient items takes the following inputs
                 // type of the item, the amount of the item, the skill required, and the talent used.

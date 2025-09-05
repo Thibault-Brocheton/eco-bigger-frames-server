@@ -56,11 +56,11 @@ namespace Eco.Mods.TechTree
     [RequireRoomContainment]
     [RequireRoomVolume(2)]
     [Tag("Usable")]
-    [Ecopedia("Housing Objects", "Cultural", subPageName: "Ornate Gold Frame Wide Item")]
+    [Ecopedia("Housing Objects", "Cultural", subPageName: "Ornate Gold Frame Large Wide Item")]
             public partial class OrnateGoldFrameLargeWideObject : PictureFrameObject, IRepresentsItem
     {
         public virtual Type RepresentedItemType => typeof(OrnateGoldFrameLargeWideItem);
-        public override LocString DisplayName => Localizer.DoStr("Ornate Gold Frame Wide");
+        public override LocString DisplayName => Localizer.DoStr("Ornate Gold Frame Large Wide");
         public override TableTextureMode TableTexture => TableTextureMode.Metal;
 
         protected override void Initialize()
@@ -79,7 +79,7 @@ namespace Eco.Mods.TechTree
     }
 
     [Serialized]
-    [LocDisplayName("Ornate Gold Frame Wide")]
+    [LocDisplayName("Ornate Gold Frame Large Wide")]
     [LocDescription("An ornate gold frame useful for simple picture and art displays.")]
     [Ecopedia("Housing Objects", "Cultural", createAsSubPage: true)]
     [Tag("Housing")]
@@ -111,7 +111,7 @@ namespace Eco.Mods.TechTree
     /// </remarks>
     [RequiresModule(typeof(BlacksmithTableObject))]
     [RequiresSkill(typeof(BlacksmithSkill), 6)]
-    [Ecopedia("Housing Objects", "Cultural", subPageName: "Ornate Gold Frame Wide Item")]
+    [Ecopedia("Housing Objects", "Cultural", subPageName: "Ornate Gold Frame Large Wide Item")]
     public partial class OrnateGoldFrameLargeWideRecipe : RecipeFamily
     {
         public OrnateGoldFrameLargeWideRecipe()
@@ -119,7 +119,7 @@ namespace Eco.Mods.TechTree
             var recipe = new Recipe();
             recipe.Init(
                 name: "OrnateGoldFrameLargeWide",  //noloc
-                displayName: Localizer.DoStr("Ornate Gold Frame Wide"),
+                displayName: Localizer.DoStr("Ornate Gold Frame Large Wide"),
 
                 // Defines the ingredients needed to craft this recipe. An ingredient items takes the following inputs
                 // type of the item, the amount of the item, the skill required, and the talent used.
@@ -144,9 +144,9 @@ namespace Eco.Mods.TechTree
             // Defines our crafting time for the recipe
             this.CraftMinutes = CreateCraftTimeValue(beneficiary: typeof(OrnateGoldFrameLargeWideRecipe), start: 1, skillType: typeof(BlacksmithSkill), typeof(BlacksmithFocusedSpeedTalent), typeof(BlacksmithParallelSpeedTalent));
 
-            // Perform pre/post initialization for user mods and initialize our recipe instance with the display name "Ornate Gold Frame Wide"
+            // Perform pre/post initialization for user mods and initialize our recipe instance with the display name "Ornate Gold Frame Large Wide"
             this.ModsPreInitialize();
-            this.Initialize(displayText: Localizer.DoStr("Ornate Gold Frame Wide"), recipeType: typeof(OrnateGoldFrameLargeWideRecipe));
+            this.Initialize(displayText: Localizer.DoStr("Ornate Gold Frame Large Wide"), recipeType: typeof(OrnateGoldFrameLargeWideRecipe));
             this.ModsPostInitialize();
 
             // Register our RecipeFamily instance with the crafting system so it can be crafted.

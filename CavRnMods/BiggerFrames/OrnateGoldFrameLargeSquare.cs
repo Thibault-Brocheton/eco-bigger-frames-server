@@ -56,11 +56,11 @@ namespace Eco.Mods.TechTree
     [RequireRoomContainment]
     [RequireRoomVolume(2)]
     [Tag("Usable")]
-    [Ecopedia("Housing Objects", "Cultural", subPageName: "Ornate Gold Frame Square Item")]
+    [Ecopedia("Housing Objects", "Cultural", subPageName: "Ornate Gold Frame Large Square Item")]
             public partial class OrnateGoldFrameLargeSquareObject : PictureFrameObject, IRepresentsItem
     {
         public virtual Type RepresentedItemType => typeof(OrnateGoldFrameLargeSquareItem);
-        public override LocString DisplayName => Localizer.DoStr("Ornate Gold Frame Square");
+        public override LocString DisplayName => Localizer.DoStr("Ornate Gold Frame Large Square");
         public override TableTextureMode TableTexture => TableTextureMode.Metal;
 
         protected override void Initialize()
@@ -79,7 +79,7 @@ namespace Eco.Mods.TechTree
     }
 
     [Serialized]
-    [LocDisplayName("Ornate Gold Frame Square")]
+    [LocDisplayName("Ornate Gold Frame Large Square")]
     [LocDescription("An ornate gold frame useful for simple picture and art displays.")]
     [Ecopedia("Housing Objects", "Cultural", createAsSubPage: true)]
     [Tag("Housing")]
@@ -112,14 +112,14 @@ namespace Eco.Mods.TechTree
     [RequiresModule(typeof(BlacksmithTableObject))]
     [RequiresSkill(typeof(BlacksmithSkill), 6)]
     [ForceCreateView]
-    [Ecopedia("Housing Objects", "Cultural", subPageName: "Ornate Gold Frame Square Item")]
+    [Ecopedia("Housing Objects", "Cultural", subPageName: "Ornate Gold Frame Large Square Item")]
     public partial class OrnateGoldFrameLargeSquareRecipe : Recipe
     {
         public OrnateGoldFrameLargeSquareRecipe()
         {
             this.Init(
                 name: "OrnateGoldFrameLargeSquare",  //noloc
-                displayName: Localizer.DoStr("Ornate Gold Frame Square"),
+                displayName: Localizer.DoStr("Ornate Gold Frame Large Square"),
 
                 // Defines the ingredients needed to craft this recipe. An ingredient items takes the following inputs
                 // type of the item, the amount of the item, the skill required, and the talent used.

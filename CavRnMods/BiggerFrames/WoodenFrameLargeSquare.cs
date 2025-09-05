@@ -56,11 +56,11 @@ namespace Eco.Mods.TechTree
     [RequireRoomContainment]
     [RequireRoomVolume(2)]
     [Tag("Usable")]
-    [Ecopedia("Housing Objects", "Cultural", subPageName: "Wooden Frame Square Item")]
+    [Ecopedia("Housing Objects", "Cultural", subPageName: "Wooden Frame Large Square Item")]
             public partial class WoodenFrameLargeSquareObject : PictureFrameObject, IRepresentsItem
     {
         public virtual Type RepresentedItemType => typeof(WoodenFrameLargeSquareItem);
-        public override LocString DisplayName => Localizer.DoStr("Wooden Frame Square");
+        public override LocString DisplayName => Localizer.DoStr("Wooden Frame Large Square");
         public override TableTextureMode TableTexture => TableTextureMode.Wood;
 
         protected override void Initialize()
@@ -79,7 +79,7 @@ namespace Eco.Mods.TechTree
     }
 
     [Serialized]
-    [LocDisplayName("Wooden Frame Square")]
+    [LocDisplayName("Wooden Frame Large Square")]
     [LocDescription("A wooden frame useful for simple picture and art displays.")]
     [Ecopedia("Housing Objects", "Cultural", createAsSubPage: true)]
     [Tag("Housing")]
@@ -111,14 +111,14 @@ namespace Eco.Mods.TechTree
     /// </remarks>
     [RequiresSkill(typeof(CarpentrySkill), 4)]
     [ForceCreateView]
-    [Ecopedia("Housing Objects", "Cultural", subPageName: "Wooden Frame Square Item")]
+    [Ecopedia("Housing Objects", "Cultural", subPageName: "Wooden Frame Large Square Item")]
     public partial class WoodenFrameLargeSquareRecipe : Recipe
     {
         public WoodenFrameLargeSquareRecipe()
         {
             this.Init(
                 name: "WoodenFrameLargeSquare",  //noloc
-                displayName: Localizer.DoStr("Wooden Frame Square"),
+                displayName: Localizer.DoStr("Wooden Frame Large Square"),
 
                 // Defines the ingredients needed to craft this recipe. An ingredient items takes the following inputs
                 // type of the item, the amount of the item, the skill required, and the talent used.

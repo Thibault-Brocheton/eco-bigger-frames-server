@@ -56,11 +56,11 @@ namespace Eco.Mods.TechTree
     [RequireRoomContainment]
     [RequireRoomVolume(2)]
     [Tag("Usable")]
-    [Ecopedia("Housing Objects", "Cultural", subPageName: "Ornate Gold Frame Tall Item")]
+    [Ecopedia("Housing Objects", "Cultural", subPageName: "Ornate Gold Frame Large Tall Item")]
             public partial class OrnateGoldFrameLargeTallObject : PictureFrameObject, IRepresentsItem
     {
         public virtual Type RepresentedItemType => typeof(OrnateGoldFrameLargeTallItem);
-        public override LocString DisplayName => Localizer.DoStr("Ornate Gold Frame Tall");
+        public override LocString DisplayName => Localizer.DoStr("Ornate Gold Frame Large Tall");
         public override TableTextureMode TableTexture => TableTextureMode.Metal;
 
         protected override void Initialize()
@@ -79,7 +79,7 @@ namespace Eco.Mods.TechTree
     }
 
     [Serialized]
-    [LocDisplayName("Ornate Gold Frame Tall")]
+    [LocDisplayName("Ornate Gold Frame Large Tall")]
     [LocDescription("An ornate gold frame useful for simple picture and art displays.")]
     [Ecopedia("Housing Objects", "Cultural", createAsSubPage: true)]
     [Tag("Housing")]
@@ -112,14 +112,14 @@ namespace Eco.Mods.TechTree
     [RequiresModule(typeof(BlacksmithTableObject))]
     [RequiresSkill(typeof(BlacksmithSkill), 6)]
     [ForceCreateView]
-    [Ecopedia("Housing Objects", "Cultural", subPageName: "Ornate Gold Frame Tall Item")]
+    [Ecopedia("Housing Objects", "Cultural", subPageName: "Ornate Gold Frame Large Tall Item")]
     public partial class OrnateGoldFrameLargeTallRecipe : Recipe
     {
         public OrnateGoldFrameLargeTallRecipe()
         {
             this.Init(
                 name: "OrnateGoldFrameLargeTall",  //noloc
-                displayName: Localizer.DoStr("Ornate Gold Frame Tall"),
+                displayName: Localizer.DoStr("Ornate Gold Frame Large Tall"),
 
                 // Defines the ingredients needed to craft this recipe. An ingredient items takes the following inputs
                 // type of the item, the amount of the item, the skill required, and the talent used.
