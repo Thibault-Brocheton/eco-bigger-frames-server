@@ -144,7 +144,7 @@ namespace Eco.Mods.TechTree
                 });
             // Perform post initialization steps for user mods and initialize our recipe instance as a tag product with the crafting system
             this.ModsPostInitialize();
-            CraftingComponent.AddTagProduct(typeof(MasonryTableObject), typeof(BorderlessFrameTallRecipe), this);
+            CraftingComponent.AddTagProduct(typeof(MasonryTableObject), typeof(BorderlessFrameWideRecipe), this);
         }
 
 
