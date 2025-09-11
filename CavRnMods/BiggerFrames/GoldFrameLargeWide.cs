@@ -93,7 +93,7 @@ namespace Eco.Mods.TechTree
 
     [Serialized]
     [LocDisplayName("Gold Frame Large Wide")]
-    [LocDescription("A gold frame useful for simple picture and art displays.")]
+    [LocDescription("A large gold frame useful for simple picture and art displays.")]
     [Ecopedia("Housing Objects", "Cultural", createAsSubPage: true)]
     [Tag("Housing")]
     [Weight(1000)] // Defines how heavy GoldFrameLargeWide is.

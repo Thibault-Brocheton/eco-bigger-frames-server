@@ -93,7 +93,7 @@ namespace Eco.Mods.TechTree
 
     [Serialized]
     [LocDisplayName("Ornate Iron Frame Large Wide")]
-    [LocDescription("An ornate iron frame useful for simple picture and art displays.")]
+    [LocDescription("A large ornate iron frame useful for simple picture and art displays.")]
     [Ecopedia("Housing Objects", "Cultural", createAsSubPage: true)]
     [Tag("Housing")]
     [Weight(1000)] // Defines how heavy OrnateIronFrameLargeWide is.
